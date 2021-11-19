@@ -1,13 +1,20 @@
  <?php require_once('../../private/initialize.php');  ?>
 
+
 <?php
+
+/*
   $salamanders = [
     ['id' => '1', 'position' => '1', 'visible'  => '1', 'type'  => 'Red-legged Salamander'],
     ['id' => '2', 'position' => '2', 'visible'  => '1', 'type'  => 'Pigeon Mountain Salamander'],
     ['id' => '3', 'position' => '3', 'visible'  => '1', 'type'  => 'ZigZag Salamander'],
     ['id' => '4', 'position' => '4', 'visible'  => '1', 'type'  => 'Slimy Salamander'],
   ];
+  */
     ?>
+    
+
+
 
 
 <?php $page_title = 'Salamanders'; ?>
@@ -31,8 +38,7 @@
           
         </tr>
 
-        <?php foreach($salamanders as $salamander) 
-        { ?>
+        <?php while($salamanders = mysqli_fetch_assoc($salamander_set)) { ?>
           <tr>
             <td><?php echo h($salamander['id']); ?></td>
             <td><?php echo h($salamander['position']); ?></td>
@@ -42,9 +48,9 @@
               View</a></td>
             <td><a class="action" href="<?= url_for('salamanders/edit.php?type=' .  h(u($salamander['type'])). '&id=' .h(u($salamander['id']))); ?>">Edit</a></td>
             <td><a class ="action" href="">Delete</a></td>
-        </tr>
-        <?php } ?>
-      </table>
+        </tr>     
+        } ?>
+        </table>
     </div>
   </div>
 
