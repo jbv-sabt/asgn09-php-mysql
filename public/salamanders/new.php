@@ -26,7 +26,7 @@ if($test == '404') {
     <form action="<?= url_for('/salamanders/create.php'); ?>" method="post">
       <dl>
         <dt>Salamander Type</dt>
-        <dd><input type="text" name="type" value="" /></dd>
+        <dd><input type="text" name="name" value="" /></dd>
       </dl>
       <dl>
         <dt>Position</dt>
