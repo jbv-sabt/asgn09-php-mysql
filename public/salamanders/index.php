@@ -3,6 +3,8 @@
 
 <?php
 
+$salamander_set = find_all_salamanders();
+
 /*
   $salamanders = [
     ['id' => '1', 'position' => '1', 'visible'  => '1', 'type'  => 'Red-legged Salamander'],
@@ -13,9 +15,6 @@
   */
     ?>
     
-
-
-
 
 <?php $page_title = 'Salamanders'; ?>
 <?php include(SHARED_PATH . '/salamanderHeader.php'); ?>
@@ -35,10 +34,9 @@
           <th>Visible</th>
           <th>Type</th>
           <th colspan = "3">Actions</th>
-          
         </tr>
 
-        <?php while($salamanders = mysqli_fetch_assoc($salamander_set)) { ?>
+        <?php while($salamander = mysqli_fetch_assoc($salamander_set)) { ?>
           <tr>
             <td><?php echo h($salamander['id']); ?></td>
             <td><?php echo h($salamander['position']); ?></td>
@@ -49,7 +47,7 @@
             <td><a class="action" href="<?= url_for('salamanders/edit.php?type=' .  h(u($salamander['type'])). '&id=' .h(u($salamander['id']))); ?>">Edit</a></td>
             <td><a class ="action" href="">Delete</a></td>
         </tr>     
-        } ?>
+        <?php } ?>
         </table>
     </div>
   </div>
