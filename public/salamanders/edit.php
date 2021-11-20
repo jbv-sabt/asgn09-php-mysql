@@ -14,12 +14,12 @@ if(is_post_request()) {
 
   // Handle form values sent by new.php
 
-  $type = $_POST['type'] ?? '';
+  $type = $_POST['name'] ?? '';
   $position = $_POST['position'] ?? '';
   $visible = $_POST['visible'] ?? '';
 
   echo "Form parameters<br />";
-  echo "Type: " . $type . "<br />";
+  echo "Name: " . $name . "<br />";
   echo "Position: " . $position . "<br />";
   echo "Visible: " . $visible . "<br />";
 }
@@ -38,8 +38,8 @@ if(is_post_request()) {
 
     <form action="<?= url_for('/salamanders/edit.php?id=' . h(u($id))); ?>" method="post">
       <dl>
-        <dt>Type</dt>
-        <dd><input type="text" name="type" value="<?php echo h($type); ?>" /></dd>
+        <dt>Name</dt>
+        <dd><input type="text" name="name" value="<?php echo h($name); ?>"/></dd>
       </dl>
       <dl>
         <dt>Position</dt>
