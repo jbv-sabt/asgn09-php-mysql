@@ -49,6 +49,7 @@ $salamander_set = find_all_salamanders();
         </tr>     
         <?php } ?>
         </table>
+          <?php mysqli_free_result($salamander_set); ?>
     </div>
     <cite>Thanks to <a href="https://herpsofnc.org/"> Amphibians and Reptiles of NC </a></cite>
   </div>
