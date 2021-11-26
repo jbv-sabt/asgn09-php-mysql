@@ -7,7 +7,7 @@
 <div id ="content">
     <h1> Main menu</h1>
     <ul>
-        <li><a href="<?= url_for('/salamanders/index.php'); ?>">Salamanders</a></li>
+        <li><a href="<?= url_for('public/salamanders/index.php'); ?>">Salamanders</a></li>
     </ul>
 </div>
 

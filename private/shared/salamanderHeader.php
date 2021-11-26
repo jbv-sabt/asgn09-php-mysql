@@ -1,16 +1,11 @@
-<?php
-  if(!isset($page_title)) { $page_title = 'Salamanders'; }
-?>
-
+<?php if(!isset($page_title)) { $page_title = 'Salamanders'; }?>
 <!doctype html>
-
 <html lang="en">
   <head>
     <title>SAS - <?php echo h($page_title); ?></title>
     <meta charset="utf-8">                                     
-    <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/salamanders.css'); ?>"/> 
+    <link rel="stylesheet" media="all" href="<?php echo url_for('public/stylesheets/salamanders.css'); ?>"/> 
   </head>
-
   <body>
     <header>
       <h1>Southern Appalachian Salamanders</h1>
@@ -18,6 +13,6 @@
 
     <navigation>
       <ul>
-        <li><a href="<?php echo url_for('/index.php'); ?>">Home</a></li>
+        <li><a href="<?php echo url_for('public/index.php'); ?>">Home</a></li>
       </ul>
     </navigation>
